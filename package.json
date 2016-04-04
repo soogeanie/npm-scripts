@@ -1,0 +1,36 @@
+{
+  "name": "npm-scripts",
+  "version": "1.0.0",
+  "author": "Sujin Minnich <sujinminnich@gmail.com>",
+  "description": "My development environment automated with npm scripts.",
+  "license": "ISC",
+
+  "main": "index.js",
+
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o dist/stylesheets src/stylesheets",
+    "autoprefixer": "postcss -u autoprefixer -r dist/stylesheets/*",
+    "lint": "./node_modules/eslint/bin/eslint.js  src/scripts",
+    "uglify": "mkdir -p dist/scripts && ./node_modules/uglify-js/bin/uglifyjs src/scripts/*.js -m -o dist/scripts/main.js && uglifyjs src/scripts/*.js -m -c -o dist/scripts/main.min.js",
+    "imagemin": "imagemin src/images dist/images -p",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "build:js": "npm run lint && npm run uglify",
+    "build:all": "npm run build:css && npm run build:js && npm run imagemin",
+    "watch:css": "./node_modules/onchange/cli.js 'src/stylesheets/*.scss' -- npm run build:css",
+    "watch:js": "./node_modules/onchange/cli.js 'src/scripts/*.js' -- npm run build:js",
+    "dev": "./node_modules/parallelshell/index.js 'npm run start' 'npm run watch:css' 'npm run watch:js'",
+    "start": "node ./node_modules/http-server/bin/http-server ./dist"
+  },
+
+  "devDependencies": {
+    "node-sass": "3.4.2",
+    "autoprefixer": "6.3.6",
+    "postcss-cli": "2.5.1",
+    "eslint": "2.6.0",
+    "uglify-js": "2.6.2",
+    "imagemin-cli": "2.1.0",
+    "onchange": "2.2.0",
+    "parallelshell": "2.0.0",
+    "http-server": "0.9.0"
+  }
+}
