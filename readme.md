@@ -11,7 +11,7 @@ Don't worry if you're not a terminal expert (I'm not one either!). Sometimes onl
 ### Step by Step Guide
 1. Create your project folder. I like to store all my project folders in a folder named Sites that lives in my Home(:house:) folder.
 
-2. Open your project folder in your text editor of choice. Mine is [Atom](atom.io).
+2. Open your project folder in your text editor of choice. Mine is [Atom](https://atom.io).
 
 3. Go to your project folder in your terminal.
   * If you type `ls` in your terminal, it will tell you what folders are available wherever you are currently.
@@ -36,7 +36,7 @@ Don't worry if you're not a terminal expert (I'm not one either!). Sometimes onl
 
 4. Once you're in your folder, then type `touch .nvmrc` - touch means create a file, so we're creating a file named .nvmrc - this is where we will put our version of node.
 
-5. Go to your text editor and open the .nvmrc file. Check on [Node.JS](nodejs.org) to see what the most up to date version is and type that in.
+5. Go to your text editor and open the .nvmrc file. Check on [Node.JS](https://nodejs.org) to see what the most up to date version is and type that in.
 
   * If it says `v4.4.2 LTS`, then all you need to do is type `4.4.2` into your .nvmrc file.
 
